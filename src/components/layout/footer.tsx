@@ -13,7 +13,7 @@ const footerNavigation = [
     {
       name: 'Acerca de LVF Acabados',
       items: [
-        { name: 'Nostros', href: '#' },
+        { name: 'Nosotros', href: '#' },
         { name: 'Trabaja con nosotros', href: '#' },
         { name: 'Seguridad y salud en el trabajo', href: '#' },
       ],

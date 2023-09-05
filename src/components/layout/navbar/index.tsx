@@ -1,5 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 
+import SignIn from './signin'
+
 export default function Navbar() {
   return (
     <header className="sticky top-0 z-10">
@@ -19,8 +21,8 @@ export default function Navbar() {
                 className="w-full rounded-xl px-4 py-3"
               />
             </div>
-            <div className="flex space-x-3 text-white">
-              <a href="#">Iniciar sesión</a>
+            <div className="flex items-center space-x-3 text-white">
+              <SignIn />
               <a href="#">Mis compras</a>
               <a href="#">Carrito</a>
             </div>
