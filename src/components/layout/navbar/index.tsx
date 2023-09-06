@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 
+import Search from './search'
 import SignIn from './signin'
 
 export default function Navbar() {
@@ -15,11 +16,7 @@ export default function Navbar() {
               />
             </a>
             <div className="hidden flex-1 lg:flex">
-              <input
-                type="text"
-                placeholder="Buscar"
-                className="w-full rounded-xl px-4 py-3"
-              />
+              <Search />
             </div>
             <div className="flex items-center space-x-3 text-white">
               <SignIn />
