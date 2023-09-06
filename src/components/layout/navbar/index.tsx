@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 
+import Link from 'next/link'
 import Search from './search'
 import SignIn from './signin'
 
@@ -9,12 +10,12 @@ export default function Navbar() {
       <nav className="bg-brand">
         <div className="mx-auto max-w-7xl px-8">
           <div className="flex h-24 items-center justify-between space-x-6">
-            <a href="#">
+            <Link href="/">
               <img
                 src="https://cassinelli.com/assets/cassinelli/logo-cassinelli-white.svg"
                 alt=""
               />
-            </a>
+            </Link>
             <div className="hidden flex-1 lg:flex">
               <Search />
             </div>
