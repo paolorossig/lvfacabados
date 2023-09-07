@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import Search from './search'
 import SignIn from './signin'
+import { ShoppingCartIcon } from '@heroicons/react/24/outline'
 
 export default function Navbar() {
   return (
@@ -19,10 +20,15 @@ export default function Navbar() {
             <div className="hidden flex-1 lg:flex">
               <Search />
             </div>
-            <div className="flex items-center space-x-3 text-white">
+            <div className="flex h-12 items-center justify-center divide-x divide-white text-white">
               <SignIn />
-              <a href="#">Mis compras</a>
-              <a href="#">Carrito</a>
+              <div className="flex h-full flex-col items-start px-6">
+                <span>Mis</span>
+                <span>Compras</span>
+              </div>
+              <div className="flex h-full items-center pl-6 pr-3">
+                <ShoppingCartIcon className="h-8 w-8" />
+              </div>
             </div>
           </div>
         </div>
