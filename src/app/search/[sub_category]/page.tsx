@@ -1,18 +1,20 @@
 import { products } from '@/data/products'
 import { defaultSort, sorting } from '@/lib/constants'
 
-type Props = { searchParams?: { [key: string]: string | string[] | undefined } }
+type Props = {
+  params: { sub_category: string }
+  searchParams?: { [key: string]: string | string[] | undefined }
+}
 
-export default function SearchPage({ searchParams }: Props) {
-  const { q, sort } = searchParams as { [key: string]: string }
-  const searchValue = decodeURI(q)
+export default function CategoryPage({ params, searchParams }: Props) {
+  const subCategory = decodeURI(params.sub_category)
+  const { sort } = searchParams as { [key: string]: string }
+
   const { sortKey, reverse } =
     sorting.find((item) => item.slug === sort) || defaultSort
 
   const sortedProducts = products
-    .filter((p) => {
-      return p.name.toLowerCase().includes(searchValue)
-    })
+    .filter((p) => p.sub_category.toLowerCase() === subCategory)
     .sort((a, b) => {
       const aValue = Number(a[sortKey]) ?? 9999
       const bValue = Number(b[sortKey]) ?? 9999

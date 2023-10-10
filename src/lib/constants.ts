@@ -1,14 +1,14 @@
 export type SortFilterItem = {
   name: string
   slug: string | null
-  sortKey: 'RELEVANCE' | 'NEW' | 'PRICE'
+  sortKey: 'relevance' | 'new' | 'price'
   reverse: boolean
 }
 
 export const defaultSort: SortFilterItem = {
   name: 'Relevancia',
   slug: null,
-  sortKey: 'RELEVANCE',
+  sortKey: 'relevance',
   reverse: false,
 }
 
@@ -17,19 +17,19 @@ export const sorting: SortFilterItem[] = [
   {
     name: 'Nuevo',
     slug: 'new',
-    sortKey: 'NEW',
-    reverse: false,
+    sortKey: 'new',
+    reverse: true,
   },
   {
     name: 'Precio: Menor a Mayor',
     slug: 'price-asc',
-    sortKey: 'PRICE',
+    sortKey: 'price',
     reverse: false,
   },
   {
     name: 'Precio: Mayor a Menor',
     slug: 'price-desc',
-    sortKey: 'PRICE',
+    sortKey: 'price',
     reverse: true,
   },
 ]
