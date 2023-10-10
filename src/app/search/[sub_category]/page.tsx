@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 import { products } from '@/data/products'
 import { defaultSort, sorting } from '@/lib/constants'
 
@@ -26,13 +28,15 @@ export default function CategoryPage({ params, searchParams }: Props) {
     <section>
       <ol className="mt-4 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-3">
         {sortedProducts.map((product) => (
-          <li key={product.name} className="flex flex-col">
-            <span>{product.id}</span>
-            <a href="#">
-              <span>{product.name}</span>
-            </a>
-            <span>S/ {product.price}</span>
-            {product.new && <span>New</span>}
+          <li key={product.name}>
+            <Link href={`/product/${product.id}`}>
+              <div className="flex flex-col">
+                <span>{product.id}</span>
+                <span>{product.name}</span>
+                <span>S/ {product.price}</span>
+                {product.new && <span>New</span>}
+              </div>
+            </Link>
           </li>
         ))}
       </ol>

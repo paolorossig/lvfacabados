@@ -10,7 +10,103 @@ export type Product = {
   relevance?: number
 }
 
+export const irobotProducts: Product[] = [
+  {
+    id: 'IROB-0001',
+    name: 'Aspiradora Robot Roomba',
+    price: 100.0,
+    color: '',
+    category: 'IRobot',
+    sub_category: 'IRobot',
+    image:
+      'https://qidcfx1zbotbdw8uoij2kll.blob.core.windows.net/sys-master-images/h9c/h2d/9349816188958/111231_14_media_csl1200Wx1200H',
+    new: false,
+  },
+  {
+    id: 'IROB-0002',
+    name: 'Aspiradora Robot I3',
+    price: 150.0,
+    color: '',
+    category: 'IRobot',
+    sub_category: 'IRobot',
+    image:
+      'https://qidcfx1zbotbdw8uoij2kll.blob.core.windows.net/sys-master-images/hb4/h44/9349816811550/111232_15_media_csl1200Wx1200H',
+    new: false,
+  },
+  {
+    id: 'IROB-0003',
+    name: 'Aspiradora Robot I3 + Roomba',
+    price: 200.0,
+    color: '',
+    category: 'IRobot',
+    sub_category: 'IRobot',
+    image:
+      'https://qidcfx1zbotbdw8uoij2kll.blob.core.windows.net/sys-master-images/hb4/h44/9349816811550/111232_15_media_csl1200Wx1200H',
+    new: false,
+  },
+  {
+    id: 'IROB-0004',
+    name: 'Aspiradora Robot J7',
+    price: 290.0,
+    color: '',
+    category: 'IRobot',
+    sub_category: 'IRobot',
+    image:
+      'https://qidcfx1zbotbdw8uoij2kll.blob.core.windows.net/sys-master-images/hfa/h92/9332556169246/111234_14_media_csl1200Wx1200H',
+    new: false,
+  },
+]
+
+export const trevolProducts: Product[] = [
+  {
+    id: 'TREV-0001',
+    name: 'Monocomando Tempra Para Lavatorio Pico Bajo',
+    price: 399.9,
+    color: '',
+    category: 'Trevol',
+    sub_category: 'Trevol',
+    image:
+      'https://qidcfx1zbotbdw8uoij2kll.blob.core.windows.net/sys-master-images/h3b/h26/9271637803038/110308_15_media_csl1200Wx1200H',
+    new: false,
+  },
+  {
+    id: 'TREV-0002',
+    name: 'Monocomando Tempra Para Lavatorio Pico Alto',
+    price: 549.9,
+    color: '',
+    category: 'Trevol',
+    sub_category: 'Trevol',
+    image:
+      'https://qidcfx1zbotbdw8uoij2kll.blob.core.windows.net/sys-master-images/h01/h5e/9376919388190/110309_15_media_csl1200Wx1200H',
+    new: false,
+  },
+  {
+    id: 'TREV-0003',
+    name: 'Monocomando Tempra Para Ducha',
+    price: 625.9,
+    color: '',
+    category: 'Trevol',
+    sub_category: 'Trevol',
+    image:
+      'https://qidcfx1zbotbdw8uoij2kll.blob.core.windows.net/sys-master-images/h9a/hef/9271639506974/110310_01_media_csl1200Wx1200H',
+    new: false,
+  },
+  {
+    id: 'TREV-0004',
+    name: 'Monocomando Tempra Para Lavatorio Pico Alto',
+    price: 290.0,
+    color: '',
+    category: 'Trevol',
+    sub_category: 'Trevol',
+    image:
+      'https://qidcfx1zbotbdw8uoij2kll.blob.core.windows.net/sys-master-images/h5a/hca/9271642062878/110311_15_media_csl1200Wx1200H',
+    new: false,
+  },
+]
+
 export const products: Product[] = [
+  ...irobotProducts,
+  ...trevolProducts,
   {
     id: 'POR6-0001',
     name: 'Vitrificado Carrara Blanco',
