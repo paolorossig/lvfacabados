@@ -2,6 +2,7 @@
 
 import { Disclosure } from '@headlessui/react'
 import { MinusIcon, PlusIcon } from '@heroicons/react/20/solid'
+
 import type { FilterItem } from '@/lib/constants'
 
 export default function FilterList({ list }: { list: FilterItem[] }) {

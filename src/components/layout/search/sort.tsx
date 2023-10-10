@@ -1,13 +1,14 @@
 'use client'
 
-import { useEffect, useState } from 'react'
-import { usePathname, useSearchParams } from 'next/navigation'
 import Link from 'next/link'
-import clsx from 'clsx'
+import { usePathname, useSearchParams } from 'next/navigation'
+import { useEffect, useState } from 'react'
 import { Menu } from '@headlessui/react'
 import { CheckIcon, ChevronDownIcon } from '@heroicons/react/20/solid'
-import { createUrl } from '@/lib/utils'
+import clsx from 'clsx'
+
 import type { SortFilterItem } from '@/lib/constants'
+import { createUrl } from '@/lib/utils'
 
 export default function SortBy({ list }: { list: SortFilterItem[] }) {
   const pathname = usePathname()

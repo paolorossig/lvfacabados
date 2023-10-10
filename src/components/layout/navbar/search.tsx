@@ -2,6 +2,7 @@
 
 import { useRouter, useSearchParams } from 'next/navigation'
 import { useEffect, useState } from 'react'
+
 import { createUrl } from '@/lib/utils'
 
 export default function Search() {

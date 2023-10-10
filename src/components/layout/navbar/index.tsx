@@ -1,9 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
 
 import Link from 'next/link'
+import { ShoppingCartIcon } from '@heroicons/react/24/outline'
+
 import Search from './search'
 import SignIn from './signin'
-import { ShoppingCartIcon } from '@heroicons/react/24/outline'
 
 export default function Navbar() {
   return (
