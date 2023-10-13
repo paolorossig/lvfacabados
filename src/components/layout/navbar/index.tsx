@@ -1,7 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 
 import Link from 'next/link'
-import { ShoppingCartIcon } from '@heroicons/react/24/outline'
+
+import Cart from '@/components/cart'
 
 import Search from './search'
 import SignIn from './signin'
@@ -28,7 +29,7 @@ export default function Navbar() {
                 <span>Compras</span>
               </div>
               <div className="flex h-full items-center pl-6 pr-3">
-                <ShoppingCartIcon className="h-8 w-8" />
+                <Cart />
               </div>
             </div>
           </div>
