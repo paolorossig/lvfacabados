@@ -3,12 +3,10 @@ import { HeartIcon } from '@heroicons/react/24/outline'
 
 import { products } from '@/data/products'
 
-type Props = { params: { id: string } }
-
 const defaultImage =
   'https://qidcfx1zbotbdw8uoij2kll.blob.core.windows.net/sys-master-images/h3b/h26/9271637803038/110308_15_media_csl1200Wx1200H'
 
-export default function ProductPage({ params }: Props) {
+export default function ProductPage({ params }: { params: { id: string } }) {
   const product = products.find((p) => p.id === params.id)
 
   // TODO: Add product not found message
@@ -38,7 +36,7 @@ export default function ProductPage({ params }: Props) {
             <div className="mt-10 flex">
               <button
                 type="submit"
-                className="hover:bg-brand-contrast flex max-w-xs flex-1 items-center justify-center rounded-md border border-transparent bg-brand px-8 py-3 text-base font-medium text-white focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2 focus:ring-offset-gray-50 sm:w-full"
+                className="flex max-w-xs flex-1 items-center justify-center rounded-md border border-transparent bg-brand px-8 py-3 text-base font-medium text-white hover:bg-brand-contrast focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2 focus:ring-offset-gray-50 sm:w-full"
               >
                 Agregar al carrito
               </button>

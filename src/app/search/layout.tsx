@@ -2,9 +2,11 @@ import FilterList from '@/components/layout/search/filter'
 import SortBy from '@/components/layout/search/sort'
 import { filters, sorting } from '@/lib/constants'
 
-type Props = { children: React.ReactNode }
-
-export default function SearchLayout({ children }: Props) {
+export default function SearchLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
   return (
     <main className="py-4">
       <section className="mx-auto max-w-7xl px-8">

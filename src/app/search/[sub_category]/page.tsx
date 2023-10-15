@@ -3,12 +3,13 @@ import Link from 'next/link'
 import { products } from '@/data/products'
 import { defaultSort, sorting } from '@/lib/constants'
 
-type Props = {
+export default function CategoryPage({
+  params,
+  searchParams,
+}: {
   params: { sub_category: string }
   searchParams?: { [key: string]: string | string[] | undefined }
-}
-
-export default function CategoryPage({ params, searchParams }: Props) {
+}) {
   const subCategory = decodeURI(params.sub_category)
   const { sort } = searchParams as { [key: string]: string }
 

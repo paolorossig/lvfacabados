@@ -3,9 +3,11 @@ import Link from 'next/link'
 import { products } from '@/data/products'
 import { defaultSort, sorting } from '@/lib/constants'
 
-type Props = { searchParams?: { [key: string]: string | string[] | undefined } }
-
-export default function SearchPage({ searchParams }: Props) {
+export default function SearchPage({
+  searchParams,
+}: {
+  searchParams?: { [key: string]: string | string[] | undefined }
+}) {
   const { q, sort } = searchParams as { [key: string]: string }
   const searchValue = decodeURI(q)
   const { sortKey, reverse } =
