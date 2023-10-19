@@ -4,6 +4,8 @@ import { Fragment, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { ShoppingCartIcon, XMarkIcon } from '@heroicons/react/24/outline'
 
+import { useCartStore } from '@/lib/stores/cart'
+
 import CartIcon from './icon'
 
 export default function CartModal() {
@@ -11,10 +13,17 @@ export default function CartModal() {
   const openCart = () => setIsOpen(true)
   const closeCart = () => setIsOpen(false)
 
+  const { items } = useCartStore()
+
+  const itemsList = Array.from(items, ([productId, quantity]) => ({
+    productId,
+    quantity,
+  }))
+
   return (
     <>
       <button onClick={openCart}>
-        <CartIcon />
+        <CartIcon totalItems={items.size} />
       </button>
       <Transition show={isOpen}>
         <Dialog onClose={closeCart} className="relative z-50">
@@ -45,10 +54,22 @@ export default function CartModal() {
                   <XMarkIcon className="h-6 transition-all ease-in-out hover:scale-110" />
                 </button>
               </div>
-              <div className="mt-20 flex w-full flex-col items-center justify-center overflow-hidden">
-                <ShoppingCartIcon className="h-16 stroke-1" />
-                <p className="mt-6 text-center text-2xl">Your cart is empty.</p>
-              </div>
+              {items.size > 0 ? (
+                <ul>
+                  {itemsList.map((item) => (
+                    <li key={item.productId}>
+                      {item.productId}: {item.quantity}
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <div className="mt-20 flex w-full flex-col items-center justify-center overflow-hidden">
+                  <ShoppingCartIcon className="h-16 stroke-1" />
+                  <p className="mt-6 text-center text-2xl">
+                    Your cart is empty.
+                  </p>
+                </div>
+              )}
             </Dialog.Panel>
           </Transition.Child>
         </Dialog>
